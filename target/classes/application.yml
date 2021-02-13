@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: customer-service
+
+management:
+  endpoints:
+    web:
+      exposure.include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+  info:
+    git:
+      mode: full
+
+customer.info: Property value backed into the image

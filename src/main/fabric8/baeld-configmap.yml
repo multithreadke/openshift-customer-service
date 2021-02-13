@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  greeting.message: What is OpenShift?
+kind: ConfigMap
+metadata:
+  name: openshift-spring-boot-demo-config-map
+  namespace: pos

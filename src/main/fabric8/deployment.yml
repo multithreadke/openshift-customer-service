@@ -1,0 +1,30 @@
+spec:
+  template:
+    spec:
+      containers:
+      - env:
+        - name: GREETING_MESSAGE
+          valueFrom:
+            configMapKeyRef:
+              name: openshift-spring-boot-demo-config-map
+              key: greeting.message
+        - name: GREETING_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: openshift-spring-boot-demo-secret
+              key: greeting.secret
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: openshift-spring-boot-demo-secret
+              key: jwt.secret
+        - name: SPRING_DATASOURCE_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: openshift-spring-boot-demo-secret
+              key: spring.datasource.username
+        - name: SPRING_DATASOURCE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: openshift-spring-boot-demo-secret
+              key: spring.datasource.password

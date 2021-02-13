@@ -1,0 +1,21 @@
+spring:
+  cloud.kubernetes.reload:
+    enabled: true
+    strategy: restart_context
+
+  datasource:
+    url: jdbc:postgresql://postgresql:5432/sampledb
+
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        # otherwise: java.sql.SQLFeatureNotSupportedException: Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented.
+        jdbc.lob.non_contextual_creation: true
+
+    show-sql: true
+
+management:
+  endpoint:
+    restart:
+      enabled: true
